@@ -9,10 +9,6 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .App{
   color: rgb(17, 17, 17);
   max-width: 740px;
@@ -21,4 +17,15 @@ code {
   padding: 40px;
   margin: 65px auto 45px;
   border-radius: 4.5px;
+}
+
+.format-toolbar {
+  display: flex;
+  border-bottom: solid 1.7px;
+  padding: 10px 0;
+  margin: 0 0 10px 0;
+}
+
+.tooltip-icon-button {
+  border: 0;
 }
