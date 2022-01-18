@@ -1,3 +1,5 @@
-import TextEditor from './TextEditor'
+import TextEditor from './TextEditor';
+import BoldMark from './BoldMark';
+import ItalicMark from './ItalicMark';
 
-export { TextEditor };
+export { TextEditor, BoldMark, ItalicMark };
