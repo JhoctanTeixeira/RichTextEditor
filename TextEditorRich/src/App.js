@@ -8,8 +8,6 @@ class App extends Component() {
         <div className = "App">
            <TextEditor />
         </div>
-        
-   
     );
   }
 }

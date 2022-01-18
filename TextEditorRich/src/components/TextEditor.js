@@ -1,10 +1,30 @@
 import React, { Component } from "react";
-import { Editor } from "slate";
-import { Value } from "slate";
+import { Editor } from "slate-react";
+import { Value } from 'slate';
 
+const initialValue = Value.fromJSON({
+  document: {
+    nodes: [
+      {
+        object: "block",
+        type: "paragraph",
+        nodes: [
+          {
+            object: "text",
+            leaves: [
+              {
+                text: "My first paragraph!",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
 export default class TextEditor extends Component() {
   state = {
-    value: "",
+    value: initialValue,
   };
 
   onChange = ({ value }) => {
@@ -13,8 +33,6 @@ export default class TextEditor extends Component() {
     });
   };
   render() {
-    return(
-        <Editor value={this.state.value} onChange={this.onChange} />
-    )
+    return <Editor value={this.state.value} onChange={this.onChange} />;
   }
 }
