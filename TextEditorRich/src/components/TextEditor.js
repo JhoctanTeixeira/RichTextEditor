@@ -21,18 +21,20 @@ const initialValue = Value.fromJSON({
       },
     ],
   },
-});
-export default class TextEditor extends Component() {
+})
+export default class TextEditor extends Component {
+
   state = {
     value: initialValue,
-  };
+  }
 
   onChange = ({ value }) => {
-    this.setState({
-      value,
-    });
-  };
+    this.setState({ value })
+  }
+
   render() {
-    return <Editor value={this.state.value} onChange={this.onChange} />;
+    return (
+    <Editor value={this.state.value} onChange={this.onChange} />
+    )
   }
 }
