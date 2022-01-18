@@ -56,7 +56,7 @@ export default class TextEditor extends Component {
     }
   };
 
-  renderMark = (props) => {
+  renderMark = props => {
     switch (props.mark.type) {
       case "bold":
         return <BoldMark {...props} />;
@@ -70,15 +70,32 @@ export default class TextEditor extends Component {
     }
   };
 
+  onMarkClick = (e, type) => {
+
+    e.preventDefault();
+
+    const { value } = this.state;
+
+    const change = value.change().toogleMark(type);
+
+    this.onChange(change);
+  };
+
   render() {
     return (
       <Fragment>
         <FormatToolbar>
-          <button className="tooltip-icon-button">
+          <button
+            onPointerDown={(e) => this.onMarkClick(e, "bold")}
+            className="tooltip-icon-button"
+          >
             <Icon icon={bold} />
           </button>
 
-          <button className="tooltip-icon-button">
+          <button
+            onPointerDown={(e) => this.onMarkClick(e, "italic")}
+            className="tooltip-icon-button"
+          >
             <Icon icon={italic} />
           </button>
         </FormatToolbar>
