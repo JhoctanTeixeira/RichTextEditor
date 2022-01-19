@@ -26,6 +26,7 @@ export default class TextEditor extends Component {
 
 	onKeyDown = (e, change) => {
 
+
 		if (!e.ctrlKey) {
 			return;
 		}
