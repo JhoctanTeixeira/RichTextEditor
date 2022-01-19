@@ -11,7 +11,7 @@ const initialValue = Value.fromJSON({
 						object: 'text',
 						leaves: [
 							{
-								text: 'My first paragraph!',
+								text: 'Meu primeiro parágrafo  (^_~)   !',
 							},
 						],
 					},
