@@ -10,10 +10,11 @@ import { code } from 'react-icons-kit/feather/code';
 import { list } from 'react-icons-kit/feather/list';
 import { underline } from 'react-icons-kit/feather/underline';
 import { link2 } from 'react-icons-kit/feather/link2';
-
+import "../App.css"
 import { ic_title } from 'react-icons-kit/md/ic_title';
 import { ic_format_quote } from 'react-icons-kit/md/ic_format_quote';
 import { BoldMark, ItalicMark, FormatToolbar } from './index';
+import SpaceW from './video/spacetwoo.mp4'
 
 export default class TextEditor extends Component {
 	state = {
@@ -201,7 +202,29 @@ export default class TextEditor extends Component {
 
 	render() {
 		return (
-			<Fragment>
+			
+			<div>
+				<div>
+				<p className='titleEdit'>Text Editor 
+					<a href="github.com/JhoctanTeixeira">/JhoctanTeixeira</a>
+				</p>
+
+				</div>
+				
+				<video autoPlay loop muted
+				style={{
+					position: "absolute",
+					width: "100%",
+					left: "50%",
+					top: '50%',
+					height: "100%",
+					objectFit: "cover",
+					transform: "translate(-50%, -50%)",
+					zIndex: "-1"
+				}}>
+					<source src={SpaceW} type="video/mp4" />
+				</video>
+				<Fragment>
 				<FormatToolbar>
 					{this.renderMarkIcon('title', ic_title)}
 					{this.renderMarkIcon('bold', bold)}
@@ -220,6 +243,9 @@ export default class TextEditor extends Component {
 					renderNode={this.renderNode}
 				/>
 			</Fragment>
+
+			</div>
+			
 		);
 	}
 }
